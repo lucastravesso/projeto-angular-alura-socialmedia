@@ -10,6 +10,11 @@ export class NovoUsuarioService {
   constructor(private httpClient: HttpClient) { }
 
   cadastraNovoUsuario(novoUsuario: NovoUsuario){
-    return this.httpClient.post('http://localhost:3000/user/signeup', novoUsuario);
+    return this.httpClient.post('http://localhost:3000/user/signup', novoUsuario);
   }
+
+  verificaUsuarioExistente(nomeUsuario: string) {
+    return this.httpClient.get(`http://localhost:3000/user/exists/${nomeUsuario}`);
+  }
+
 }
