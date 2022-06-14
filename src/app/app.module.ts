@@ -1,3 +1,4 @@
+import { AutenticacaoModule } from './autenticacao/autenticacao.module';
 import { CabecalhoModule } from './componentes/cabecalho/cabecalho.module';
 import { RodapeModule } from './componentes/rodape/rodape.module';
 import { NgModule } from '@angular/core';
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
     RodapeModule,
-    CabecalhoModule
+    CabecalhoModule,
+    AutenticacaoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
