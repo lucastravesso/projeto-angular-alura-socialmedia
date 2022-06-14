@@ -11,7 +11,9 @@ describe('CartaoComponent', () => {
       declarations: [ CartaoComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(CartaoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

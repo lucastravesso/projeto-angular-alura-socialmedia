@@ -1,11 +1,11 @@
-import { Router } from '@angular/router';
-import { UsuarioExisteService } from './usuario-existe.service';
-import { NovoUsuarioService } from './novo-usuario.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NovoUsuario } from './novo-usuario';
+import { Router } from '@angular/router';
 import { minusculoValidator } from './minusculo.validator';
-import { usuarioSenhaIguaisValidator } from './usuario-senha.validator';
+import { NovoUsuario } from './novo-usuario';
+import { NovoUsuarioService } from './novo-usuario.service';
+import { UsuarioExisteService } from './usuario-existe.service';
+import { usuarioSenhaIguaisValidator } from './usuario-senha-iguais.validator';
 
 @Component({
   selector: 'app-novo-usuario',
@@ -18,7 +18,7 @@ export class NovoUsuarioComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private novoUsuarioService: NovoUsuarioService,
-    private usuarioExisteService: UsuarioExisteService,
+    private usuarioExistenteServive: UsuarioExisteService,
     private router: Router
   ) {}
 
@@ -30,12 +30,12 @@ export class NovoUsuarioComponent implements OnInit {
         userName: [
           '',
           [minusculoValidator],
-          [this.usuarioExisteService.usuarioJaExiste()],
+          [this.usuarioExistenteServive.usuarioJaExite()],
         ],
         password: [''],
       },
       {
-        Validators: [usuarioSenhaIguaisValidator],
+        validators: [usuarioSenhaIguaisValidator],
       }
     );
   }
@@ -43,11 +43,12 @@ export class NovoUsuarioComponent implements OnInit {
   cadastrar() {
     if (this.novoUsuarioForm.valid) {
       const novoUsuario = this.novoUsuarioForm.getRawValue() as NovoUsuario;
-      this.novoUsuarioService.cadastraNovoUsuario(novoUsuario).subscribe(() => {
-        this.router.navigate(['']);
-      },
+      this.novoUsuarioService.cadastraNovoUsuario(novoUsuario).subscribe(
+        () => {
+          this.router.navigate(['']);
+        },
         (error) => {
-          console.log(error)
+          console.log(error);
         }
       );
     }

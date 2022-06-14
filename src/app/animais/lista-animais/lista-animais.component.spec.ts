@@ -11,7 +11,9 @@ describe('ListaAnimaisComponent', () => {
       declarations: [ ListaAnimaisComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(ListaAnimaisComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

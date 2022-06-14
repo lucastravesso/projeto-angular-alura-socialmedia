@@ -11,7 +11,9 @@ describe('RodapeComponent', () => {
       declarations: [ RodapeComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(RodapeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

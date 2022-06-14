@@ -2,7 +2,7 @@ export interface Animal {
   id: number;
   postDate: Date;
   url: string;
-  descricao: string;
+  description: string;
   allowComments: boolean;
   likes: number;
   comments: number;

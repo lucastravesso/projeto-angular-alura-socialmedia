@@ -11,7 +11,9 @@ describe('GradeFotosAnimaisComponent', () => {
       declarations: [ GradeFotosAnimaisComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(GradeFotosAnimaisComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

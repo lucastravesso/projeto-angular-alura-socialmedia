@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AnimalComponent } from './animal.component';
+import { NovoAnimalComponent } from './novo-animal.component';
 
-describe('AnimalComponent', () => {
-  let component: AnimalComponent;
-  let fixture: ComponentFixture<AnimalComponent>;
+describe('NovoAnimalComponent', () => {
+  let component: NovoAnimalComponent;
+  let fixture: ComponentFixture<NovoAnimalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AnimalComponent ]
+      declarations: [ NovoAnimalComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AnimalComponent);
+    fixture = TestBed.createComponent(NovoAnimalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
